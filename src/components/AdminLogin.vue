@@ -10,7 +10,7 @@
         <label class="block text-sm font-medium mb-2">Пароль</label>
         <input v-model="password" type="password" class="w-full p-2 border border-gray-300 rounded">
       </div>
-      <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded">Войти</button>
+      <a-button type="primary" @click="login">Войти</a-button>
     </form>
   </div>
 </template>
@@ -18,8 +18,12 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
 import { useRouter } from 'vue-router';
+import { Button } from 'ant-design-vue';
 
 export default defineComponent({
+  components: {
+    'a-button': Button,
+  },
   name: 'AdminLogin',
   setup() {
     const router = useRouter();
